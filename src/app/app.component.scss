@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #133a3b;
+  width: 100%;
+  .chartBox {
+    // position: relative;
+    margin: 15px;
+    padding: 10px;
+    width: 48vw;
+    border-radius: 12px;
+    background-color: #fff;
+    .taskBox {
+      padding-top: 5px;
+      .check {
+        color: #2c942c;
+        font-size: large;
+        margin-right: 5px;
+      }
+    }
+  }
+  .infoBox {
+    width: 48vw;
+    display: flex;
+    flex-wrap: wrap;
+    h1 {
+      margin: auto;
+      color: #fff;
+    }
+  }
+  .cell {
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    background-color: #fff;
+    width: 200px;
+    margin: 3px;
+    justify-content: center;
+    padding: 5px;
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      .borderCell {
+        border-bottom: 1px solid #808080;
+      }
+      td {
+        text-align: center;
+      }
+    }
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.positive {
+  color: #d64b3f;
+}
+.negative {
+  color: #2c942c;
+}

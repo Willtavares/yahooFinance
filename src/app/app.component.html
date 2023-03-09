@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="chartBox">
+    <canvas id="myChart"></canvas>
+    <div class="taskBox">
+      <p><span class="check">X</span> Consultar o preço do ativo na API do Yahoo Finance (este é um exemplo da consulta
+        do ativo PETR4
+        https://query2.finance.yahoo.com/v8/finance/chart/PETR4.SA)</p>
+      <p><span class="check">X</span>Implementar uma página em Angular que apresente o valor do ativo nos últimos 30
+        pregões e mostre a variação do
+        preço no período. Você deverá considerar o valor de abertura (chart.result.indicators.quote.open)</p>
+      <p><span class="check">X</span>Inclua um gráfico apresentando o resultado da variação.</p>
+      <p><span class="check">X</span>Disponibilizar seu código aqui no Github</p>
+
+      <h4>* As datas não vieram conforme aplicado no range da query.</h4>
+    </div>
+  </div>
+  <div class="infoBox">
+    <h1>Valor do Ativo nos ultimos 30 dias</h1>
+    <div *ngFor="let item of timeStamp; index as i">
+      <div class="cell">
+        <table>
+          <tr class="borderCell">
+            <th colspan="3">{{i+1}}º Pregão - {{item}}</th>
+          </tr>
+          <tr>
+            <th>
+              <p>Open</p>
+            </th>
+            <th>
+              <p>Close</p>
+            </th>
+            <th>
+              <p>Variation</p>
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <p>{{open[i] | number: '1.0-3'}} </p>
+            </td>
+            <td>
+              <p>{{close[i]| number: '1.0-3' }}</p>
+            </td>
+            <td>
+              <p [ngClass]="variations[i] < 0 ? 'positive' : 'negative'">{{variations[i] | number: '1.0-3'}} </p>
+            </td>
+          </tr>
+        </table>
+
+
+      </div>
+    </div>
+  </div>
+</div>
